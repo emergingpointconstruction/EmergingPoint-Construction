@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmergingPoint Construction | Quality at Every Point</title>
+  <meta name="description" content="EmergingPoint Construction — building, construction and house plan services. Quality at Every Point.">
+  <style>
+    :root { --navy:#0b2d5c; --orange:#f57c00; --dark:#111827; --light:#f7f8fa; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial,Helvetica,sans-serif; color:var(--dark); line-height:1.6; background:white; }
+    nav { position:sticky; top:0; z-index:10; background:white; border-bottom:1px solid #e5e7eb; display:flex; justify-content:space-between; align-items:center; padding:12px 6%; }
+    nav img { width:155px; max-height:65px; object-fit:contain; }
+    nav a { color:var(--navy); text-decoration:none; margin-left:22px; font-weight:700; }
+    .hero { background:linear-gradient(135deg,#0b2d5c,#173f75); color:white; padding:75px 6%; display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; }
+    .hero h1 { font-size:clamp(38px,6vw,66px); line-height:1.05; margin-bottom:18px; }
+    .hero h1 span { color:#ff8a00; }
+    .hero p { font-size:20px; max-width:620px; margin-bottom:28px; color:#e7edf7; }
+    .btn { display:inline-block; padding:14px 22px; border-radius:7px; text-decoration:none; font-weight:800; margin-right:10px; margin-bottom:10px; }
+    .btn-orange { background:var(--orange); color:white; }
+    .btn-white { background:white; color:var(--navy); }
+    .hero-card { background:white; padding:12px; border-radius:12px; box-shadow:0 15px 40px #0005; }
+    .hero-card img { width:100%; display:block; border-radius:8px; }
+    section { padding:70px 6%; }
+    .section-title { text-align:center; color:var(--navy); font-size:36px; margin-bottom:12px; }
+    .section-sub { text-align:center; max-width:700px; margin:0 auto 40px; color:#667085; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:1100px; margin:auto; }
+    .card { padding:28px; background:var(--light); border-radius:12px; border-top:4px solid var(--orange); }
+    .card h3 { color:var(--navy); margin-bottom:8px; }
+    .about { background:#f7f8fa; }
+    .about-inner { max-width:1000px; margin:auto; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+    .about h2 { color:var(--navy); font-size:36px; margin-bottom:15px; }
+    .project { max-width:1000px; margin:auto; }
+    .project img { width:100%; border-radius:12px; box-shadow:0 10px 30px #0002; }
+    .contact { background:var(--navy); color:white; text-align:center; }
+    .contact h2 { font-size:38px; margin-bottom:10px; }
+    .contact p { color:#dce6f5; margin-bottom:25px; }
+    footer { background:#071c38; color:#cbd5e1; text-align:center; padding:22px 6%; font-size:14px; }
+    @media(max-width:800px) {
+      nav { flex-direction:column; gap:8px; }
+      nav a { margin:0 7px; font-size:14px; }
+      .hero, .about-inner, .cards { grid-template-columns:1fr; }
+      .hero { padding-top:45px; }
+      section { padding:50px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <img src="epc-logo.png" alt="EmergingPoint Construction logo">
+  <div>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <p style="color:#ff9a2f;font-weight:800;letter-spacing:2px;margin-bottom:8px;">EMERGINGPOINT CONSTRUCTION</p>
+    <h1>Quality <span>at Every Point.</span></h1>
+    <p>Building with purpose. Designing with care. Delivering quality construction and house-plan solutions for your vision.</p>
+    <a class="btn btn-orange" href="#contact">Get a Quote</a>
+    <a class="btn btn-white" href="#projects">View Our Work</a>
+  </div>
+  <div class="hero-card">
+    <img src="house-plan-1.jpg" alt="EPC house plan and elevations">
+  </div>
+</header>
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">Professional solutions from the first idea to the finished project.</p>
+  <div class="cards">
+    <div class="card"><h3>Building & Construction</h3><p>Quality-focused construction for residential and other building projects.</p></div>
+    <div class="card"><h3>House Plans & Designs</h3><p>Practical, attractive house plans designed around your needs and available space.</p></div>
+    <div class="card"><h3>Renovations & Improvements</h3><p>Upgrade, improve and transform existing spaces with careful attention to detail.</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Featured Project</h2>
+  <p class="section-sub">A sample house plan showcasing our approach to practical planning and presentation.</p>
+  <div class="project">
+    <img src="house-plan-1.jpg" alt="EmergingPoint Construction house plan">
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="about-inner">
+    <div>
+      <h2>About EPC</h2>
+      <p>EmergingPoint Construction (EPC) is based in Harare, Zimbabwe and serves clients throughout Zimbabwe and beyond. We are committed to delivering dependable construction and design solutions with quality at every point of the process.</p>
+      <br>
+      <p>Our goal is simple: understand what the client wants, plan carefully, and deliver work that we can be proud of — wherever the project takes us.</p>
+    </div>
+    <div>
+      <img src="epc-logo.png" alt="EmergingPoint Construction" style="width:100%;max-width:430px;">
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Let's Build Your Vision</h2>
+  <p>Contact EmergingPoint Construction for house plans, construction and project enquiries.</p>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:20px;">
+    <a class="btn btn-orange" href="https://wa.me/263788788411?text=Hello%20EPC%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank">WhatsApp +263 788 788 411</a>
+    <a class="btn btn-orange" href="https://wa.me/263716755555?text=Hello%20EPC%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank">WhatsApp +263 716 755 555</a>
+    <a class="btn btn-orange" href="https://wa.me/263788663138?text=Hello%20EPC%2C%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank">WhatsApp +263 788 663 138</a>
+  </div>
+  <div style="margin-top:12px;">
+    <a class="btn btn-white" href="tel:+263788788411">Call +263 788 788 411</a>
+    <a class="btn btn-white" href="tel:+263716755555">Call +263 716 755 555</a>
+    <a class="btn btn-white" href="tel:+263788663138">Call +263 788 663 138</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 EmergingPoint Construction (EPC) · Quality at Every Point
+</footer>
+
+</body>
+</html>
