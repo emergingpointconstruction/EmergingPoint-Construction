@@ -295,7 +295,7 @@ Zimbabwe</p>
     const phone=document.getElementById('quote-phone').value;
     const budget=document.getElementById('quote-budget').value;
     const message=document.getElementById('quote-message').value;
-    const text='Hello EmergingPoint Construction.%0A%0AName: '+encodeURIComponent(name)+'%0A%0AService: '+encodeURIComponent(service)+'%0A%0ALocation: '+encodeURIComponent(location)+'%0A%0APhone / WhatsApp: '+encodeURIComponent(phone)+'%0A%0AProject details: '+encodeURIComponent(message)+'%0A%0ABudget: '+encodeURIComponent(budget || 'Not provided');
+    const text=encodeURIComponent('Hello EmergingPoint Construction.\n\nName: '+name+'\n\nService: '+service+'\n\nLocation: '+location+'\n\nPhone / WhatsApp: '+phone+'\n\nProject details: '+message+'\n\nBudget: '+(budget || 'Not provided'));
     window.open('https://wa.me/263788788411?text='+text,'_blank');">
 
     <input id="quote-name" type="text" placeholder="Your Name" required
