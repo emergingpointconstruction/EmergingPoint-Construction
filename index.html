@@ -293,8 +293,9 @@ Zimbabwe</p>
     const service=document.getElementById('quote-service').value;
     const location=document.getElementById('quote-location').value;
     const phone=document.getElementById('quote-phone').value;
+    const budget=document.getElementById('quote-budget').value;
     const message=document.getElementById('quote-message').value;
-    const text='Hello EmergingPoint Construction.%0A%0AName: '+encodeURIComponent(name)+'%0AService: '+encodeURIComponent(service)+'%0ALocation: '+encodeURIComponent(location)+'%0APhone / WhatsApp: '+encodeURIComponent(phone)+'%0AProject details: '+encodeURIComponent(message);
+    const text='Hello EmergingPoint Construction.%0A%0AName: '+encodeURIComponent(name)+'%0AService: '+encodeURIComponent(service)+'%0ALocation: '+encodeURIComponent(location)+'%0APhone / WhatsApp: '+encodeURIComponent(phone)+'%0ABudget: '+encodeURIComponent(budget || 'Not provided')+'%0AProject details: '+encodeURIComponent(message);
     window.open('https://wa.me/263788788411?text='+text,'_blank');">
 
     <input id="quote-name" type="text" placeholder="Your Name" required
@@ -302,7 +303,7 @@ Zimbabwe</p>
     
     <input id="quote-phone" type="tel" placeholder="Phone / WhatsApp Number"
   required style="width:100%;padding:12px;margin:6px 0;box-sizing:border-box;">
-
+     
     <select id="quote-service" required
       style="width:100%;padding:12px;margin:6px 0;box-sizing:border-box;">
       <option value="">Select a Service</option>
@@ -317,6 +318,9 @@ Zimbabwe</p>
     
     <textarea id="quote-message" placeholder="Tell us about your project"
       required style="width:100%;padding:12px;margin:6px 0;min-height:120px;box-sizing:border-box;"></textarea>
+
+    <input id="quote-budget" type="text" placeholder="Estimated Budget (Optional)"
+  style="width:100%;padding:12px;margin:6px 0;box-sizing:border-box;">
 
     <button type="submit" class="btn btn-orange"
       style="border:none;cursor:pointer;">
