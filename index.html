@@ -27,6 +27,52 @@
   </script>
   <style>
     :root { --navy:#0b2d5c; --orange:#f57c00; --dark:#111827; --light:#f7f8fa; }
+    #intro-animation {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  animation: introExit 1s ease 4s forwards;
+}
+
+#intro-animation img {
+  width: min(75%, 380px);
+  height: auto;
+  object-fit: contain;
+  animation: logoBuild 2s ease both;
+}
+
+#intro-animation p {
+  color: #0b2d5c;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  animation: logoBuild 1.5s ease 1s both;
+}
+
+@keyframes logoBuild {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes introExit {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:Arial,Helvetica,sans-serif; color:var(--dark); line-height:1.6; background:white; }
     nav { position:sticky; top:0; z-index:10; background:white; border-bottom:1px solid #e5e7eb; display:flex; justify-content:space-between; align-items:center; padding:12px 6%; }
@@ -443,5 +489,18 @@ Zimbabwe</p>
 
   <p>© 2026 EmergingPoint Construction. All rights reserved.</p>
 </footer>
+
+<script>
+  window.addEventListener("load", function () {
+    const intro = document.getElementById("intro-animation");
+
+    if (intro) {
+      setTimeout(function () {
+        intro.remove();
+      }, 5000);
+    }
+  });
+</script>
+
 </body>
 </html>
