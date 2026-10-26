@@ -106,15 +106,37 @@
   animation: revealPart 0.7s ease 1s forwards;
 }
 
+
 #intro-animation .logo-letters {
-  clip-path: inset(39% 0 27% 0);
-  animation: revealPart 0.8s ease 1.8s forwards;
+  clip-path: inset(39% 100% 27% 0);
+  animation: writeLetters 0.7s ease 1.8s forwards;
 }
 
-#intro-animation .logo-name {
-  clip-path: inset(64% 0 27% 0);
-  animation: revealPart 0.7s ease 2.7s forwards;
+@keyframes writeLetters {
+  from {
+    clip-path: inset(39% 100% 27% 0);
+  }
+  to {
+    clip-path: inset(39% 0 27% 0);
+  }
 }
+
+
+
+#intro-animation .logo-name {
+  clip-path: inset(64% 100% 27% 0);
+  animation: writeName 0.6s ease 2.7s forwards;
+}
+
+@keyframes writeName {
+  from {
+    clip-path: inset(64% 100% 27% 0);
+  }
+  to {
+    clip-path: inset(64% 0 27% 0);
+  }
+}
+
 
 #intro-animation .logo-tagline {
   clip-path: inset(80% 0 9% 0);
