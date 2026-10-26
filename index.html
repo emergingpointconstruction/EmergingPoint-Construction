@@ -56,9 +56,50 @@
   opacity: 0;
 }
 
+
 #intro-animation .logo-underline {
-  animation: drawUnderline 0.9s ease 0s forwards;
+  opacity: 1;
+  animation: none;
+  overflow: visible;
 }
+
+#intro-animation .underline-black,
+#intro-animation .underline-blue {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+
+#intro-animation .underline-black {
+  stroke: #111111;
+  stroke-width: 4;
+}
+
+#intro-animation .underline-blue {
+  stroke: #0b2d5c;
+  stroke-width: 4;
+}
+
+#intro-animation .underline-black:first-of-type {
+  animation: strokeDraw 0.45s ease forwards;
+}
+
+#intro-animation .underline-blue {
+  animation: strokeDraw 0.25s ease 0.4s forwards;
+}
+
+#intro-animation .underline-black:last-of-type {
+  animation: strokeDraw 0.35s ease 0.55s forwards;
+}
+
+@keyframes strokeDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 
 #intro-animation .logo-roof {
   clip-path: inset(5% 0 60% 0);
@@ -239,7 +280,13 @@
 
 <div id="intro-animation">
   <div class="intro-logo">
-    <img class="logo-layer logo-underline" src="epc-logo.png" alt="">
+    
+<svg class="logo-layer logo-underline" viewBox="0 0 669 375" aria-hidden="true">
+  <path class="underline-black" d="M 9 289 H 359"/>
+  <path class="underline-blue" d="M 359 289 C 376 289 381 275 400 276 C 410 276 414 281 422 276"/>
+  <path class="underline-black" d="M 423 289 H 656"/>
+</svg>
+
     <img class="logo-layer logo-roof" src="epc-logo.png" alt="">
     <img class="logo-layer logo-letters" src="epc-logo.png" alt="">
     <img class="logo-layer logo-name" src="epc-logo.png" alt="">
