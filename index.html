@@ -27,43 +27,72 @@
   </script>
   <style>
     :root { --navy:#0b2d5c; --orange:#f57c00; --dark:#111827; --light:#f7f8fa; }
-    #intro-animation {
+    
+#intro-animation {
   position: fixed;
   inset: 0;
   z-index: 9999;
   background: white;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 18px;
-  animation: introExit 1s ease 4s forwards;
+  animation: introExit 1s ease 5.5s forwards;
 }
 
-#intro-animation img {
+#intro-animation .intro-logo {
+  position: relative;
   width: min(75%, 380px);
-  height: auto;
-  object-fit: contain;
-  animation: logoBuild 2s ease both;
+  aspect-ratio: 669 / 375;
+  flex-shrink: 0;
 }
 
-#intro-animation p {
-  color: #0b2d5c;
-  font-weight: bold;
-  letter-spacing: 3px;
-  text-align: center;
-  animation: logoBuild 1.5s ease 1s both;
+#intro-animation .logo-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  opacity: 0;
 }
 
-@keyframes logoBuild {
+#intro-animation .logo-underline {
+  animation: drawUnderline 0.9s ease 0s forwards;
+}
+
+#intro-animation .logo-roof {
+  clip-path: inset(5% 0 60% 0);
+  animation: revealPart 0.7s ease 1s forwards;
+}
+
+#intro-animation .logo-letters {
+  clip-path: inset(39% 0 27% 0);
+  animation: revealPart 0.8s ease 1.8s forwards;
+}
+
+#intro-animation .logo-name {
+  clip-path: inset(64% 0 27% 0);
+  animation: revealPart 0.7s ease 2.7s forwards;
+}
+
+#intro-animation .logo-tagline {
+  clip-path: inset(80% 0 9% 0);
+  animation: revealPart 0.7s ease 3.5s forwards;
+}
+
+@keyframes drawUnderline {
   from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.95);
+    opacity: 1;
+    clip-path: inset(72% 100% 21% 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    clip-path: inset(72% 0 21% 0);
   }
+}
+
+@keyframes revealPart {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes introExit {
@@ -73,7 +102,8 @@
     pointer-events: none;
   }
 }
-    * { box-sizing:border-box; margin:0; padding:0; }
+
+* { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:Arial,Helvetica,sans-serif; color:var(--dark); line-height:1.6; background:white; }
     nav { position:sticky; top:0; z-index:10; background:white; border-bottom:1px solid #e5e7eb; display:flex; justify-content:space-between; align-items:center; padding:12px 6%; }
     nav img { width:155px; max-height:65px; object-fit:contain; }
@@ -205,10 +235,17 @@
 </head>
 <body>
 
+
 <div id="intro-animation">
-  <img src="epc-logo.png" alt="EmergingPoint Construction logo">
-  <p>QUALITY AT EVERY POINT</p>
+  <div class="intro-logo">
+    <img class="logo-layer logo-underline" src="epc-logo.png" alt="">
+    <img class="logo-layer logo-roof" src="epc-logo.png" alt="">
+    <img class="logo-layer logo-letters" src="epc-logo.png" alt="">
+    <img class="logo-layer logo-name" src="epc-logo.png" alt="">
+    <img class="logo-layer logo-tagline" src="epc-logo.png" alt="">
+  </div>
 </div>
+
 
 <nav>
   <a href="/">
