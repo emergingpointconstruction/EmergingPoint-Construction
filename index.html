@@ -114,43 +114,27 @@
 @keyframes writeLetters {
   from {
     clip-path: inset(39% 100% 27% 0);
-  }
-  to {
-    clip-path: inset(39% 0 27% 0);
-  }
+
+#intro-animation {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: introExit 1s ease 3s forwards;
 }
 
-#intro-animation .logo-name {
-  clip-path: inset(25% 100% 8% 0);
-  animation: writeName 0.6s ease 2.7s forwards;
+#intro-animation img {
+  width: min(75%, 380px);
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  animation: logoFade 1s ease 0.3s forwards;
 }
 
-@keyframes writeName {
-  from {
-    clip-path: inset(25% 100% 8% 0);
-  }
-  to {
-    clip-path: inset(25% 0 8% 0);
-  }
-}
-
-#intro-animation .logo-tagline {
-  clip-path: inset(80% 0 9% 0);
-  animation: revealPart 0.7s ease 3.5s forwards;
-}
-
-@keyframes drawUnderline {
-  from {
-    opacity: 1;
-    clip-path: inset(72% 100% 21% 0);
-  }
-  to {
-    opacity: 1;
-    clip-path: inset(72% 0 21% 0);
-  }
-}
-
-@keyframes revealPart {
+@keyframes logoFade {
   from { opacity: 0; }
   to { opacity: 1; }
 }
@@ -162,7 +146,7 @@
     pointer-events: none;
   }
 }
-
+    
 * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:Arial,Helvetica,sans-serif; color:var(--dark); line-height:1.6; background:white; }
     nav { position:sticky; top:0; z-index:10; background:white; border-bottom:1px solid #e5e7eb; display:flex; justify-content:space-between; align-items:center; padding:12px 6%; }
@@ -295,23 +279,9 @@
 </head>
 <body>
 
-
 <div id="intro-animation">
-  <div class="intro-logo">
-    
-<svg class="logo-layer logo-underline" viewBox="0 0 669 375" aria-hidden="true">
-  <path class="underline-black" d="M 9 289 H 359"/>
-  <path class="underline-blue" d="M 359 289 C 376 289 381 275 400 276 C 410 276 414 281 422 276"/>
-  <path class="underline-black" d="M 423 289 H 656"/>
-</svg>
-
-    <img class="logo-layer logo-roof" src="epc-logo.png" alt="">
-    <img class="logo-layer logo-letters" src="epc-logo.png" alt="">
-    <img class="logo-layer logo-name" src="epc-logo.png" alt="">
-    <img class="logo-layer logo-tagline" src="epc-logo.png" alt="">
-  </div>
+  <img src="epc-logo.png" alt="EmergingPoint Construction logo">
 </div>
-
 
 <nav>
   <a href="/">
