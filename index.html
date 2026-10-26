@@ -27,8 +27,7 @@
   </script>
   <style>
     :root { --navy:#0b2d5c; --orange:#f57c00; --dark:#111827; --light:#f7f8fa; }
-    
-#intro-animation {
+    #intro-animation {
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -88,33 +87,6 @@
 #intro-animation .underline-blue {
   animation: strokeDraw 0.25s ease 0.4s forwards;
 }
-
-#intro-animation .underline-black:last-of-type {
-  animation: strokeDraw 0.35s ease 0.55s forwards;
-}
-
-@keyframes strokeDraw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-
-#intro-animation .logo-roof {
-  clip-path: inset(5% 0 60% 0);
-  animation: revealPart 0.7s ease 1s forwards;
-}
-
-
-#intro-animation .logo-letters {
-  clip-path: inset(39% 100% 27% 0);
-  animation: writeLetters 0.7s ease 1.8s forwards;
-}
-
-@keyframes writeLetters {
-  from {
-    clip-path: inset(39% 100% 27% 0);
-
 #intro-animation {
   position: fixed;
   inset: 0;
@@ -123,7 +95,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: introExit 1s ease 3s forwards;
+  animation: introExit 1s ease 4s forwards;
 }
 
 #intro-animation img {
@@ -146,7 +118,6 @@
     pointer-events: none;
   }
 }
-    
 * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:Arial,Helvetica,sans-serif; color:var(--dark); line-height:1.6; background:white; }
     nav { position:sticky; top:0; z-index:10; background:white; border-bottom:1px solid #e5e7eb; display:flex; justify-content:space-between; align-items:center; padding:12px 6%; }
