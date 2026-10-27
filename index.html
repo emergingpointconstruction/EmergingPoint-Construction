@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
 <script>
   if (sessionStorage.getItem("epcIntroSeen") === "true") {
     document.documentElement.classList.add("skip-intro");
+  } else {
+    sessionStorage.setItem("epcIntroSeen", "true");
   }
 </script>
   <meta name="google-site-verification" content="IlYYroiDp_FvjRkGOlB8ZqFenKO2PeNkBifKSHMglHs" />
@@ -589,27 +590,21 @@ Zimbabwe</p>
 
   <p>© 2026 EmergingPoint Construction. All rights reserved.</p>
 </footer>
-
-
 <script>
-  (function () {
+  window.addEventListener("load", function () {
     const intro = document.getElementById("intro-animation");
 
     if (!intro) return;
 
-    if (sessionStorage.getItem("epcIntroSeen") === "true") {
+    if (document.documentElement.classList.contains("skip-intro")) {
       intro.remove();
       return;
     }
 
-    sessionStorage.setItem("epcIntroSeen", "true");
-
-    window.addEventListener("load", function () {
-      setTimeout(function () {
-        intro.remove();
-      }, 5600);
-    });
-  })();
+    setTimeout(function () {
+      intro.remove();
+    }, 5600);
+  });
 </script>
 
 </body>
