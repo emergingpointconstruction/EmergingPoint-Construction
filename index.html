@@ -34,109 +34,147 @@
   </script>
   <style>
     :root { --navy:#0b2d5c; --orange:#f57c00; --dark:#111827; --light:#f7f8fa; }
+    
     .skip-intro #intro-animation {
   display: none !important;
-    }
-    #intro-animation {
+}
+
+#intro-animation {
   position: fixed;
   inset: 0;
-  z-index: 9999;
-  background: white;
+  z-index: 99999;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: introExit 0.6s ease 3.2s forwards;
+  background: #06152c;
+  isolation: isolate;
+  animation: epcExit 0.8s ease-in-out 4.2s forwards;
 }
 
-#intro-animation .intro-logo {
-  position: relative;
-  width: min(75%, 380px);
-  aspect-ratio: 669 / 375;
-  flex-shrink: 0;
-}
-
-#intro-animation .logo-layer {
+/* Glowing light behind the logo */
+#intro-animation::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 30vw;
+  height: 30vw;
+  min-width: 220px;
+  min-height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.95) 0%,
+    rgba(245,124,0,0.65) 12%,
+    rgba(11,45,92,0.8) 38%,
+    transparent 72%
+  );
+  box-shadow: 0 0 100px 35px rgba(11,45,92,0.7);
   opacity: 0;
+  transform: scale(0.1);
+  animation: epcLightBurst 2s ease-out 0.2s forwards;
 }
 
-
-#intro-animation .logo-underline {
-  opacity: 1;
-  animation: none;
-  overflow: visible;
+/* Blue and orange light rays */
+#intro-animation::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg 12deg,
+    rgba(38,120,255,0.22) 13deg 14deg,
+    transparent 15deg 25deg,
+    rgba(245,124,0,0.18) 26deg 27deg,
+    transparent 28deg 40deg
+  );
+  opacity: 0;
+  animation: epcRays 2.5s ease-out 0.3s forwards;
 }
 
-#intro-animation .underline-black,
-#intro-animation .underline-blue {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
-}
-
-#intro-animation .underline-black {
-  stroke: #111111;
-  stroke-width: 4;
-}
-
-#intro-animation .underline-blue {
-  stroke: #0b2d5c;
-  stroke-width: 4;
-}
-
-#intro-animation .underline-black:first-of-type {
-  animation: strokeDraw 0.45s ease forwards;
-}
-
-#intro-animation .underline-blue {
-  animation: strokeDraw 0.25s ease 0.4s forwards;
-}
 #intro-animation img {
-  width: min(75%, 380px);
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(88%, 600px);
+  max-height: 80vh;
   height: auto;
   object-fit: contain;
   opacity: 0;
-  transform: scale(0.65);
-  animation: logoZoom 3s ease-in-out 0.2s forwards;
+  transform: scale(0.45);
+  filter: drop-shadow(0 0 0 transparent);
+  animation: epcLogoArrival 2.2s
+    cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
 }
 
-@keyframes logoZoom {
-  100% {
-  opacity: 0;
-  transform: scale(0.65);
+@keyframes epcLightBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
   }
   35% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0.65;
+    transform: scale(2.2);
+  }
+}
+
+@keyframes epcRays {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.3);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+    transform: rotate(35deg) scale(1.1);
+  }
+}
+
+@keyframes epcLogoArrival {
+  0% {
+    opacity: 0;
+    transform: scale(0.45);
+    filter: drop-shadow(0 0 25px #f57c00);
   }
   65% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.06);
+    filter:
+      drop-shadow(0 0 22px rgba(245,124,0,0.85))
+      drop-shadow(0 0 35px rgba(30,110,255,0.8));
   }
   100% {
-    opacity: 0;
-    transform: scale(1.25);
+    opacity: 1;
+    transform: scale(1);
+    filter:
+      drop-shadow(0 0 8px rgba(245,124,0,0.4))
+      drop-shadow(0 0 15px rgba(30,110,255,0.4));
   }
 }
-@keyframes logoFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-@keyframes introExit {
+@keyframes epcExit {
   to {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
   }
 }
-* { box-sizing:border-box; margin:0; padding:0; }
+
+@media (prefers-reduced-motion: reduce) {
+  #intro-animation,
+  #intro-animation::before,
+  #intro-animation::after,
+  #intro-animation img {
+    animation-duration: 0.01ms;
+    animation-delay: 0ms;
+  }
+}
+    * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:Arial,Helvetica,sans-serif; color:var(--dark); line-height:1.6; background:white; }
     nav { position:sticky; top:0; z-index:10; background:white; border-bottom:1px solid #e5e7eb; display:flex; justify-content:space-between; align-items:center; padding:12px 6%; }
     nav img { width:155px; max-height:65px; object-fit:contain; }
