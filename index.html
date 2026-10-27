@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  if (sessionStorage.getItem("epcIntroSeen") === "yes") {
+    document.documentElement.classList.add("skip-intro");
+  } else {
+    sessionStorage.setItem("epcIntroSeen", "yes");
+  }
+  </script>
   <meta name="google-site-verification" content="IlYYroiDp_FvjRkGOlB8ZqFenKO2PeNkBifKSHMglHs" />
   <meta name="google-site-verification" content="aBL1pW3SbXSytkDdLqIHrw2uEgKmbhUdNFo4rvRFmMQ" />
   <meta charset="UTF-8">
@@ -27,6 +34,9 @@
   </script>
   <style>
     :root { --navy:#0b2d5c; --orange:#f57c00; --dark:#111827; --light:#f7f8fa; }
+    .skip-intro #intro-animation {
+  display: none !important;
+    }
     #intro-animation {
   position: fixed;
   inset: 0;
