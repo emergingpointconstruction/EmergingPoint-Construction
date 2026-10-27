@@ -2,11 +2,7 @@
 <html lang="en">
 <head>
   <script>
-  if (sessionStorage.getItem("epcIntroSeen") === "yes") {
-    document.documentElement.classList.add("skip-intro");
-  } else {
-    sessionStorage.setItem("epcIntroSeen", "yes");
-  }
+  sessionStorage.removeItem("epcIntroSeen");
   </script>
   <meta name="google-site-verification" content="IlYYroiDp_FvjRkGOlB8ZqFenKO2PeNkBifKSHMglHs" />
   <meta name="google-site-verification" content="aBL1pW3SbXSytkDdLqIHrw2uEgKmbhUdNFo4rvRFmMQ" />
