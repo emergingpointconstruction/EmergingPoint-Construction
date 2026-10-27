@@ -585,16 +585,26 @@ Zimbabwe</p>
   <p>© 2026 EmergingPoint Construction. All rights reserved.</p>
 </footer>
 
+
 <script>
-  window.addEventListener("load", function () {
+  (function () {
     const intro = document.getElementById("intro-animation");
 
-    if (intro) {
+    if (!intro) return;
+
+    if (sessionStorage.getItem("epcIntroSeen") === "true") {
+      intro.remove();
+      return;
+    }
+
+    sessionStorage.setItem("epcIntroSeen", "true");
+
+    window.addEventListener("load", function () {
       setTimeout(function () {
         intro.remove();
-      }, 5000);
-    }
-  });
+      }, 5600);
+    });
+  })();
 </script>
 
 </body>
