@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emergingpoint-construction.onelifeinv.workers.dev/sitemap.xml
