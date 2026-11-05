@@ -51,56 +51,61 @@
       line-height: 1.6;
     }
 
-    header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 15px 5%;
-    }
+header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 6%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--white);
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .logo img {
-      width: 55px;
-      height: 55px;
-      object-fit: contain;
-    }
+.logo img {
+  width: 155px;
+  max-height: 65px;
+  object-fit: contain;
+}
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-    }
+.logo span {
+  display: none;
+}
 
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
 
-    nav a:hover {
-      color: var(--orange);
-    }
+nav a {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    .hero {
+nav a:hover {
+  color: var(--orange);
+}
+    
+ .hero {
       background: linear-gradient(rgba(11, 45, 92, 0.88), rgba(11, 45, 92, 0.88)),
                   url("images/20261026_220524.jpg") center/cover no-repeat;
       color: var(--white);
