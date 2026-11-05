@@ -40,43 +40,48 @@
       background: var(--white);
     }
 
-    header {
-      background: var(--navy);
-      padding: 15px 5%;
-    }
+header {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 6%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
+nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    nav img {
-      max-width: 150px;
-      height: auto;
-    }
+nav img {
+  width: 155px;
+  max-height: 65px;
+  object-fit: contain;
+}
 
-    nav div {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
+nav div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
 
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-    }
+nav a {
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-    nav a:hover {
-      color: var(--orange);
-    }
+nav a:hover {
+  color: var(--orange);
+}
 
     .hero {
       background: var(--navy);
