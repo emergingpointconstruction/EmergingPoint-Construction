@@ -211,81 +211,10 @@
     .card h3 { color:var(--navy); margin-bottom:8px; }
     .about { background:#f7f8fa; }
     .about-inner { max-width:1000px; margin:auto; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
-    
-.corporate-identity {
-  max-width: 1100px;
-  margin: 60px auto 0;
-  padding: 30px 20px;
-}
-
-.identity-section {
-  margin-bottom: 45px;
-  padding: 25px;
-  background: #ffffff;
-  border-left: 5px solid var(--orange);
-  border-radius: 10px;
-  box-shadow: 0 5px 20px #0000000d;
-}
-
-.identity-section h2 {
-  color: var(--navy);
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.identity-section p {
-  color: #333333;
-  line-height: 1.8;
-}
-
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.value-item {
-  padding: 18px;
-  background: #f7f8fa;
-  border-radius: 8px;
-  border-bottom: 3px solid var(--orange);
-}
-
-.value-item h3 {
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-
-.value-item p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-.goals-list {
-  padding-left: 25px;
-  line-height: 2;
-  color: #333333;
-}
-
-.identity-section:last-child {
-  text-align: center;
-  border-left: none;
-  border-top: 4px solid var(--orange);
-}
-
-.identity-section:last-child h3 {
-  color: var(--navy);
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-   .about-inner h2 {
-  color: var(--navy);
-  font-size: 36px;
-  margin-bottom: 15px;
-   }
-.project { max-width:1000px; margin:auto; }
-.project img { width:100%; border-radius:12px; box-shadow:0 10px 30px #0002; }
-.work-gallery {
+    .about h2 { color:var(--navy); font-size:36px; margin-bottom:15px; }
+    .project { max-width:1000px; margin:auto; }
+    .project img { width:100%; border-radius:12px; box-shadow:0 10px 30px #0002; }
+    .work-gallery {
   max-width: 1100px;
   margin: auto;
   display: grid;
@@ -339,52 +268,14 @@
     .contact h2 { font-size:38px; margin-bottom:10px; }
     .contact p { color:#dce6f5; margin-bottom:25px; }
     footer { background:#071c38; color:#cbd5e1; text-align:center; padding:22px 6%; font-size:14px; }
-  @media(max-width:800px) {
-  nav { flex-direction:column; gap:8px; }
-  nav a { margin:0 7px; font-size:14px; }
-
-  .hero, .about-inner, .cards {
-    grid-template-columns:1fr;
-  }
-
-  .hero { padding-top:45px; }
-  section { padding:50px 5%; }
-
-  .corporate-identity {
-    padding: 20px 0;
-    margin-top: 35px;
-  }
-
-  .identity-section {
-    padding: 20px;
-    margin-bottom: 25px;
-  }
-
-  .identity-section h2 {
-    font-size: 25px;
-  }
-
-  .values-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-}
-
-@media(max-width:480px) {
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about h2 {
-    font-size: 29px;
-  }
-
-  .value-item {
-    padding: 16px;
-  }
-}
-
-.footer-brand {
+    @media(max-width:800px) {
+      nav { flex-direction:column; gap:8px; }
+      nav a { margin:0 7px; font-size:14px; }
+      .hero, .about-inner, .cards { grid-template-columns:1fr; }
+      .hero { padding-top:45px; }
+      section { padding:50px 5%; }
+    }
+  .footer-brand {
   margin-bottom: 12px;
 }
 
@@ -653,90 +544,6 @@
            style="width:100%;max-width:350px;">
     </div>
   </div>
-
-  <div class="corporate-identity">
-
-    <div class="identity-section">
-      <h2>Our Vision</h2>
-      <p>
-        To become a trusted and recognised construction
-        company in Zimbabwe and beyond, known for quality
-        workmanship, innovation and dependable building
-        solutions, while contributing to community
-        development through our services and creating
-        lasting positive impact.
-      </p>
-    </div>
-
-    <div class="identity-section">
-      <h2>Our Mission</h2>
-      <p>
-        To provide reliable, practical and quality
-        construction services that transform our clients'
-        ideas into lasting structures through
-        professionalism, careful planning and excellent
-        workmanship.
-      </p>
-    </div>
-
-    <div class="identity-section">
-      <h2>Our Core Values</h2>
-
-      <div class="values-grid">
-        <div class="value-item">
-          <h3>Quality</h3>
-          <p>Delivering Quality, Durable and Sustainable Construction Solutions.</p>
-        </div>
-
-        <div class="value-item">
-          <h3>Integrity</h3>
-          <p>Acting with honesty and transparency.</p>
-        </div>
-
-        <div class="value-item">
-          <h3>Professionalism</h3>
-          <p>Maintaining high working standards in every project.</p>
-        </div>
-
-        <div class="value-item">
-          <h3>Reliability</h3>
-          <p>Respecting commitments and responsibilities.</p>
-        </div>
-
-        <div class="value-item">
-          <h3>Innovation</h3>
-          <p>Embracing practical and sustainable construction solutions.</p>
-        </div>
-
-        <div class="value-item">
-          <h3>Customer Satisfaction</h3>
-          <p>Understanding and respecting clients' needs.</p>
-        </div>
-
-        <div class="value-item">
-          <h3>Community Responsibility</h3>
-          <p>Contributing positively to community development through our services.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="identity-section">
-      <h2>Our Goals</h2>
-      <ol class="goals-list">
-        <li>Expand EPC's presence across Zimbabwe and beyond.</li>
-        <li>Build lasting relationships with clients.</li>
-        <li>Deliver consistently high-quality projects.</li>
-        <li>Develop a strong and trusted construction brand.</li>
-      </ol>
-    </div>
-
-    <div class="identity-section">
-      <h2>Our Theme</h2>
-      <h3>Quality at Every Point.</h3>
-      <p>Delivering Quality, Durable and Sustainable Construction Solutions.</p>
-    </div>
-
-  </div>
 </section>
 <section id="contact" class="contact">
   <h2>Let's Build Your Vision</h2>
@@ -798,10 +605,10 @@
 
     <input id="quote-name" type="text" placeholder="Your Name" required
       style="width:100%;padding:12px;margin:6px 0;box-sizing:border-box;">
-    
+
     <input id="quote-phone" type="tel" placeholder="Phone / WhatsApp Number"
   required style="width:100%;padding:12px;margin:6px 0;box-sizing:border-box;">
-     
+
     <select id="quote-service" required
       style="width:100%;padding:12px;margin:6px 0;box-sizing:border-box;">
       <option value="">Select a Service</option>
@@ -814,7 +621,7 @@
 
     <input id="quote-location" type="text" placeholder="Project Location"
   required style="width:100%;padding:12px;margin:6px 0;box-sizing:border-box;">
-    
+
     <textarea id="quote-message" placeholder="Tell us about your project"
       required style="width:100%;padding:12px;margin:6px 0;min-height:120px;box-sizing:border-box;"></textarea>
 
