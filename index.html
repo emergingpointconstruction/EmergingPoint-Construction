@@ -335,14 +335,52 @@
     .contact h2 { font-size:38px; margin-bottom:10px; }
     .contact p { color:#dce6f5; margin-bottom:25px; }
     footer { background:#071c38; color:#cbd5e1; text-align:center; padding:22px 6%; font-size:14px; }
-    @media(max-width:800px) {
-      nav { flex-direction:column; gap:8px; }
-      nav a { margin:0 7px; font-size:14px; }
-      .hero, .about-inner, .cards { grid-template-columns:1fr; }
-      .hero { padding-top:45px; }
-      section { padding:50px 5%; }
-    }
-  .footer-brand {
+  @media(max-width:800px) {
+  nav { flex-direction:column; gap:8px; }
+  nav a { margin:0 7px; font-size:14px; }
+
+  .hero, .about-inner, .cards {
+    grid-template-columns:1fr;
+  }
+
+  .hero { padding-top:45px; }
+  section { padding:50px 5%; }
+
+  .corporate-identity {
+    padding: 20px 0;
+    margin-top: 35px;
+  }
+
+  .identity-section {
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+
+  .identity-section h2 {
+    font-size: 25px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media(max-width:480px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about h2 {
+    font-size: 29px;
+  }
+
+  .value-item {
+    padding: 16px;
+  }
+}
+
+.footer-brand {
   margin-bottom: 12px;
 }
 
