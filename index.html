@@ -814,6 +814,86 @@
 
   <p>© 2026 EmergingPoint Construction. All rights reserved.</p>
 </footer>
+  <style>
+  #epc-page-transition {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #epc-page-transition.active {
+    display: flex;
+  }
+
+  #epc-transition-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
+
+<div id="epc-page-transition">
+  <video id="epc-transition-video"
+         muted playsinline preload="auto">
+    <source src="/images/epc-page-transition-h264.mp4"
+            type="video/mp4">
+  </video>
+</div>
+
+<script>
+(function () {
+  const overlay = document.getElementById("epc-page-transition");
+  const video = document.getElementById("epc-transition-video");
+  let navigating = false;
+
+  document.addEventListener("click", function (event) {
+    const link = event.target.closest("a");
+
+    if (!link || navigating ||
+        event.button !== 0 ||
+        event.ctrlKey || event.metaKey ||
+        event.shiftKey || event.altKey ||
+        link.target || link.hasAttribute("download")) {
+      return;
+    }
+
+    const destination = new URL(link.href, location.href);
+
+    if (destination.origin !== location.origin ||
+        destination.href === location.href ||
+        (destination.hash &&
+         destination.pathname === location.pathname)) {
+      return;
+    }
+
+    event.preventDefault();
+    navigating = true;
+
+    function continueNavigation() {
+      location.href = destination.href;
+    }
+
+    overlay.classList.add("active");
+
+    video.addEventListener("ended", continueNavigation, {
+      once: true
+    });
+
+    video.addEventListener("error", continueNavigation, {
+      once: true
+    });
+
+    setTimeout(continueNavigation, 2600);
+
+    video.currentTime = 0;
+    video.play().catch(continueNavigation);
+  });
+})();
+</script>
   <script>
   window.addEventListener("load", function () {
     const intro = document.getElementById("intro-animation");
